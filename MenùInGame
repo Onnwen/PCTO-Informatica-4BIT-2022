@@ -1,0 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MenùInGame : MonoBehaviour
+{
+    // Start is called before the first frame update
+
+    public static bool inPausa = false;
+    public GameObject menuPausa;
+
+    // Update is called once per frame
+
+
+    void Start() 
+    {
+        menuPausa.SetActive(false);
+    }
+    void Update()
+    {    
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(inPausa == true)
+            {
+                riprendiPartita();
+            }
+            else if(inPausa == false)
+            {
+                Pausa();
+            }
+        }
+    }
+    void riprendiPartita()
+    {   
+        menuPausa.SetActive(false);
+        Time.timeScale = 1f;
+        inPausa = false;
+
+    }
+
+    void Pausa()
+    {
+        menuPausa.SetActive(true);
+        Time.timeScale = 0f;
+        inPausa = true;
+    }
+
+    void riprendiPartitaBottone()
+    {
+        menuPausa.SetActive(false);
+        Time.timeScale = 1f; 
+    }
+}
