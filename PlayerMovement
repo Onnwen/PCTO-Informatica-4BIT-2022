@@ -1,0 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovements : MonoBehaviour
+
+{
+    [SerializeField] float velocitaW = 10;
+    [SerializeField] float velocitaA = 10;
+    [SerializeField] float velocitaS = 10;
+    [SerializeField] float velocitaD = 10;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        movimentoPlayer();
+    }
+
+    public void movimentoPlayer()
+    {
+        //verso sopra
+        if(Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(0,velocitaW*Time.deltaTime,0); 
+        }
+        //verso sinistra
+        if(Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(-velocitaA*Time.deltaTime,0,0);
+        }
+        //verso il giù
+        if(Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(0,-velocitaS*Time.deltaTime,0);
+        }
+
+        //verso destra
+        if(Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(velocitaD*Time.deltaTime,0,0);
+        }
+    } 
+}
