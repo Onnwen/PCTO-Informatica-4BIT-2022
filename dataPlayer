@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+[System.Serializable]
+public class PlayerData 
+{
+   public float[] posizione;
+
+   public PlayerData (Player player)
+   {
+
+       posizione = new float[3];
+       posizione[0] = player.transform.position.x;
+       posizione[1] = player.transform.position.y;
+       posizione[2] = player.transform.position.z;
+
+   }
+   
+}
