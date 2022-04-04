@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class riprendiPartita: MonoBehaviour
+{
+
+    public GameObject menuPausa;
+    [SerializeField] public Button riprendiPartitaBottone;
+    [SerializeField] public Button esciBottone;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        riprendiPartitaBottone.onClick.AddListener(Riprendi);
+        esciBottone.onClick.AddListener(Esci);
+    }
+
+    void Riprendi()
+    {
+        menuPausa.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    void Esci()
+    {    
+        Application.Quit();
+    }
+}
