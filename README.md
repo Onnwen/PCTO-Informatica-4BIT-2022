@@ -20,8 +20,8 @@ Le scelte intraprese dal giocatore modificheranno il corso della vita di Ein, ma
 
 #### 📚 Evoluzione della storia 
 <details>
-  <summary>1 - Il laboratorio</summary>
-Ein si risveglia in una capsula all'interno di un vecchio e distrutto laboratorio abbandonato; non sa nemmeno chi sia. Ricorda solo la lingua tedesca. In preda dalla curiosità inizia a esplorare il posto in cui si trova, navigando all’interno del laboratorio. Scopre diversi documenti che descrivono il passato di questo posto: il suo scopo, cosa è successo e perché *lei* si trova qui.
+  <summary>Il risveglio</summary>
+Ein si risveglia in una capsula all'interno di un vecchio e distrutto laboratorio abbandonato; non sa nemmeno chi sia. Ricorda solo la lingua tedesca. In preda dalla curiosità inizia a esplorare il posto in cui si trova, navigando all’interno del laboratorio e cercando indizi che possano dare risposte alle sue domande. Scopre diversi documenti che descrivono il passato di questo posto: il suo scopo, cos'è successo e il motivo che si cela dietro alla sua presenza.
 Capirà ben presto di essere un esperimento ripudiato dal mondo e che dovrà intraprendere le giuste scelte per la sua sopravvivenza.
 </details>
 
