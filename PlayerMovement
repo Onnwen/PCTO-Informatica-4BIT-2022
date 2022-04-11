@@ -5,15 +5,16 @@ using UnityEngine;
 public class PlayerMovements : MonoBehaviour
 
 {
-    [SerializeField] float velocitaW = 10;
-    [SerializeField] float velocitaA = 10;
-    [SerializeField] float velocitaS = 10;
-    [SerializeField] float velocitaD = 10;
+    [SerializeField] public float velocitaPlayer = 10;
+    [SerializeField] public AudioSource walkOnIronSound;
+    public bool walking;
+    public bool running;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+         walkOnIronSound= GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,23 +28,63 @@ public class PlayerMovements : MonoBehaviour
         //verso sopra
         if(Input.GetKey(KeyCode.W))
         {
-            transform.Translate(0,velocitaW*Time.deltaTime,0); 
+            transform.Translate(0,velocitaPlayer*Time.deltaTime,0); 
+            walking = true;
+            
+            
         }
         //verso sinistra
         if(Input.GetKey(KeyCode.A))
         {
-            transform.Translate(-velocitaA*Time.deltaTime,0,0);
+            transform.Translate(-velocitaPlayer*Time.deltaTime,0,0);
+            walking = true;
         }
         //verso il giù
         if(Input.GetKey(KeyCode.S))
         {
-            transform.Translate(0,-velocitaS*Time.deltaTime,0);
+            transform.Translate(0,-velocitaPlayer*Time.deltaTime,0);
+            walking = true;
         }
 
         //verso destra
         if(Input.GetKey(KeyCode.D))
         {
-            transform.Translate(velocitaD*Time.deltaTime,0,0);
+            transform.Translate(velocitaPlayer*Time.deltaTime,0,0);
+            walking = true;
+        }
+
+        //corsa-----------------------------------------------------------
+        if(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
+        {
+            transform.Translate(0,(velocitaPlayer+2)*Time.deltaTime,0); 
+            running = true;
+        }
+        //verso sinistra
+        if(Input.GetKey(KeyCode.A))
+        {
+            transform.Translate((-velocitaPlayer-2)*Time.deltaTime,0,0);
+            running = true;
+        }
+        //verso il giù
+        if(Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(0,(-velocitaPlayer-2)*Time.deltaTime,0);
+            running = true;
+        }
+
+        //verso destra
+        if(Input.GetKey(KeyCode.D))
+        {
+            transform.Translate((velocitaPlayer+2)*Time.deltaTime,0,0);
+            running = true;
+        }
+
+        if(walking){
+            walkOnIronSound.Play();
+        }  
+
+        if(running){
+            walkOnIronSound.Play();
         }
     } 
 }
