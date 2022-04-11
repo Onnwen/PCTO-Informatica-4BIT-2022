@@ -1,0 +1,27 @@
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+public class PlayerFollower : MonoBehaviour 
+{
+     public Transform target;
+
+     float speed = 10.0f;
+	Vector3 lookDirection;
+
+	const float EPSILON = 0.1f;
+ 
+    void Start()
+    {
+       
+    }
+ 
+    void Update()
+    {
+         lookDirection = (target.position - transform.position).normalized;
+		if((transform.position - target.position).magnitude > EPSILON)
+			transform.Translate(lookDirection * Time.deltaTime * speed);
+ 
+    }
+ 
+}
